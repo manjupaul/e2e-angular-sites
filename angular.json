@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crs-explore-e2e": {
+    "e2e-angular-sites": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/crs-explore-e2e",
+            "outputPath": "dist/e2e-angular-sites",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "crs-explore-e2e:build"
+            "browserTarget": "e2e-angular-sites:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "crs-explore-e2e:build:production"
+              "browserTarget": "e2e-angular-sites:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "crs-explore-e2e:build"
+            "browserTarget": "e2e-angular-sites:build"
           }
         },
         "test": {
@@ -109,16 +109,19 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "crs-explore-e2e:serve"
+            "protractorConfig": "e2e/protractor.conf.js"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "crs-explore-e2e:serve:production"
+              "devServerTarget": "e2e-angular-sites:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "crs-explore-e2e"
+    }
+  },
+  "defaultProject": "e2e-angular-sites",
+  "cli": {
+    "analytics": false
+  }
 }
