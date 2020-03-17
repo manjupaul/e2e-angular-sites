@@ -15,11 +15,11 @@ Given('I have navigated to the calculator', async () => {
     await browser.wait(calc.navigateTo(), 5000);
 });
 
-When('I add two numbers {string} and {string}', async (string, string2) => {
-  await calc.setValues(string, string2);
+When('I add two numbers {string} and {string}', async (number1, number2) => {
+  await calc.setValues(number1, number2);
   await calc.goButton.click();
 });
 
-Then('the displayed output should be {string}', string => {
-  expect(calc.latestResult.getText()).to.eventually.equal(string);
+Then('the displayed output should be {string}', async (result) => {
+  await expect(calc.latestResult.getText()).to.eventually.equal(result);
 });
